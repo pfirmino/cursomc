@@ -1,11 +1,7 @@
 package com.pfirmino.cursomc.resources;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.pfirmino.cursomc.domain.Categoria;
 import com.pfirmino.cursomc.services.CategoriaService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
