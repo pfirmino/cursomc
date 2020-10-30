@@ -1,8 +1,10 @@
 package com.pfirmino.cursomc.services;
 
 import java.util.Optional;
+
 import com.pfirmino.cursomc.domain.Categoria;
 import com.pfirmino.cursomc.repositories.CategoriaRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -4,10 +4,12 @@ import java.util.Arrays;
 
 import com.pfirmino.cursomc.domain.Categoria;
 import com.pfirmino.cursomc.domain.Produto;
+
 import com.pfirmino.cursomc.repositories.CategoriaRepository;
 import com.pfirmino.cursomc.repositories.ProdutoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -44,6 +46,7 @@ public class CursomcApplication implements CommandLineRunner{
 		p2.getCategorias().addAll(Arrays.asList( cat1, cat2 ));
 		p3.getCategorias().addAll(Arrays.asList( cat1 ));
 
+		
 		categoriaRepository.saveAll(Arrays.asList( cat1, cat2 ));
 		produtoRepository.saveAll(Arrays.asList( p1, p2, p3 ));
 	}
