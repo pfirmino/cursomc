@@ -1,5 +1,6 @@
 package com.pfirmino.cursomc.services;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import com.pfirmino.cursomc.domain.Categoria;
@@ -18,5 +19,10 @@ public class CategoriaService {
         Optional<Categoria> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException(
          "Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));        
+    }
+
+    public Categoria inserir(Categoria obj){
+        obj.setId(null);
+        return repo.save(obj);
     }
 }
