@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.pfirmino.cursomc.domain.Categoria;
+import com.pfirmino.cursomc.dto.CategoriaDTO;
 import com.pfirmino.cursomc.repositories.CategoriaRepository;
 import com.pfirmino.cursomc.services.exceptions.DataIntegrityException;
 import com.pfirmino.cursomc.services.exceptions.ObjectNotFoundException;
@@ -53,5 +54,9 @@ public class CategoriaService {
     public Page<Categoria> findPage( Integer page, Integer linesPerPage, String orderedBy, String direction){
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderedBy);
         return repo.findAll(pageRequest);
+    }
+
+    public Categoria fromDTO(CategoriaDTO objDTO){
+        return new Categoria(objDTO.getId(), objDTO.getNome());
     }
 }
