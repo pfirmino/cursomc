@@ -2,6 +2,8 @@ package com.pfirmino.cursomc.resources.exceptions;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class FieldMessage implements Serializable{
 
     private static final long serialVersionUID = 1L;
@@ -18,6 +20,7 @@ public class FieldMessage implements Serializable{
         this.message = message;
     }
 
+    @JsonIgnore
     public String getFieldName() {
         return fieldName;
     }
