@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import com.pfirmino.cursomc.domain.Cliente;
 import com.pfirmino.cursomc.dto.ClienteDTO;
+import com.pfirmino.cursomc.dto.ClienteNewDTO;
 import com.pfirmino.cursomc.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,6 +28,7 @@ public class ClienteResource {
     @Autowired
     private ClienteService service;
 
+
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public ResponseEntity<Cliente> find(@PathVariable Integer id){
         Cliente obj = service.find(id);
@@ -34,7 +36,7 @@ public class ClienteResource {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Void> insert(@Valid @RequestBody ClienteDTO objDTO){
+    public ResponseEntity<Void> insert(@Valid @RequestBody ClienteNewDTO objDTO){
         Cliente obj = service.fromDTO(objDTO);
         obj = service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
