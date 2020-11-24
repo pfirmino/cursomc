@@ -8,9 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CursomcApplication implements CommandLineRunner{
 	/*
 		Para alterar a porta, adicione a chave abaixo no arquivo application.properties
-
 		server.port=${port:8081}
-	
 	*/
 
 	public static void main(String[] args) {
