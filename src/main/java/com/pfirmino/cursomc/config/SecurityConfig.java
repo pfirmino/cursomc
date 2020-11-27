@@ -31,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //Vetor com endpoints autorizados
     private static final String[] PUBLIC_MATCHERS_GET = {
         "/categorias/**",
-        "/produtos/**"
+        "/produtos/**",
+        "/clientes/**"
     };
 
     @Override
