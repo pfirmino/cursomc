@@ -3,6 +3,7 @@ package com.pfirmino.cursomc.config;
 import java.util.Arrays;
 
 import com.pfirmino.cursomc.security.JWTAuthenticationFilter;
+import com.pfirmino.cursomc.security.JWTAuthorizationFilter;
 import com.pfirmino.cursomc.security.JWTUtil;
 import com.pfirmino.cursomc.services.UserDetailsServiceImpl;
 
@@ -69,6 +70,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         
         //Adicionar o filtro de Autenticação
         http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
+
+        //Adicionar o filtro de Autorizacao
+        http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
 
         //Configuração para garantir que a aplicação não crie sessão de usuário
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); 
