@@ -134,7 +134,7 @@ public class DBService {
 		Cliente cli1 = new Cliente(
 				null, 
 				"Maria Silva", 
-				"cursomc.pfirmino@gmail.com", 
+				"maria.silva@gmail.com", 
 				"36378912377", 
 				TipoCliente.PESSOAFISICA, 
 				pwdEncoder.encode("maria123"));
