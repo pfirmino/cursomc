@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.pfirmino.cursomc.services.exceptions.AuthorizationException;
 import com.pfirmino.cursomc.services.exceptions.DataIntegrityException;
 import com.pfirmino.cursomc.services.exceptions.ObjectNotFoundException;
 
@@ -36,5 +37,11 @@ public class ResourceExceptionHandler {
             err.addError(x.getField(), x.getDefaultMessage());
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
+    @ExceptionHandler(AuthorizationException.class)
+    public ResponseEntity<StandardError> AuthorizationException(AuthorizationException e, HttpServletRequest req) {
+        StandardError err = new StandardError(HttpStatus.FORBIDDEN.value(), e.getMessage(), new Date());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
     }
 }

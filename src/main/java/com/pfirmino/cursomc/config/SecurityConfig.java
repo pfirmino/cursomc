@@ -5,7 +5,6 @@ import java.util.Arrays;
 import com.pfirmino.cursomc.security.JWTAuthenticationFilter;
 import com.pfirmino.cursomc.security.JWTAuthorizationFilter;
 import com.pfirmino.cursomc.security.JWTUtil;
-import com.pfirmino.cursomc.services.UserDetailsServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
