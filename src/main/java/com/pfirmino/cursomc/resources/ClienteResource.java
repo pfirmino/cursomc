@@ -71,7 +71,7 @@ public class ClienteResource {
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @RequestMapping(value="/page", method = RequestMethod.GET)
-    public ResponseEntity<Page<ClienteDTO>> findPAge(
+    public ResponseEntity<Page<ClienteDTO>> findPage(
             @RequestParam( value="page", defaultValue = "0") Integer page, 
             @RequestParam( value="linesPerPage", defaultValue = "24") Integer linesPerPage, 
             @RequestParam( value="orderedBy", defaultValue = "nome")String orderedBy, 
